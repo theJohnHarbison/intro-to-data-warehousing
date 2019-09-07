@@ -1,0 +1,3157 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/3/2018 3:20:01 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-A5QM5TC"
+  DTS:CreatorName="DESKTOP-A5QM5TC\John Harbison"
+  DTS:DTSID="{7558730C-CB38-4884-B568-3FCF0658FCD4}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.0800.60"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="ORDER_F"
+  DTS:PackageType="5"
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{A0EABEAD-01D2-4D55-A008-3DBD35EEBF28}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CE53E638-5A2E-4E34-8B7D-0ABCA411AE95}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="CHECKPOINT">
+      <DTS:VariableValue
+        DTS:DataType="7">1/3/2018 5:55:06 PM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BFE6761F-E4D8-4025-BE52-1535A7F1DAD0}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;SELECT ORDERID, CUSTOMERID, SALESPERSONPERSONID, PICKEDBYPERSONID, CONTACTPERSONID, ORDERDATE, EXPECTEDDELIVERYDATE, CUSTOMERPURCHASEORDERNUMBER, ISUNDERSUPPLYBACKORDERED, PICKINGCOMPLETEDWHEN FROM Sales.Orders WHERE LASTEDITEDWHEN BETWEEN '&quot; + (DT_STR, 50,1252)@[User::CHECKPOINT]  + &quot;' AND '&quot; + (DT_STR, 50,1252)  @[User::NEWCHECKPOINT] + &quot;'&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="LOAD_QUERY">
+      <DTS:VariableValue
+        DTS:DataType="8">SELECT ORDERID, CUSTOMERID, SALESPERSONPERSONID, PICKEDBYPERSONID, CONTACTPERSONID, ORDERDATE, EXPECTEDDELIVERYDATE, CUSTOMERPURCHASEORDERNUMBER, ISUNDERSUPPLYBACKORDERED, PICKINGCOMPLETEDWHEN FROM Sales.Orders WHERE LASTEDITEDWHEN BETWEEN '1/3/2018 5:55:06 PM' AND '1/4/2018 12:29:19 AM'</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{50D1A443-ADF9-4628-812F-4A8AE8207F2B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="GETDATE()"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="NEWCHECKPOINT">
+      <DTS:VariableValue
+        DTS:DataType="7">1/4/2018 12:29:19 AM</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3ACD045A-EA09-430D-A2B7-CB74146F4EC5}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ROWS_DEL">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A46F6921-C549-4FE5-A4FC-3C8887C17039}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ROWS_INS">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DD0896C1-7190-4E86-8E1F-43B5C921AFF4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ROWS_SKIP">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AE7C7D2B-2BEF-4533-B3B4-E5D7995D76AD}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="ROWS_UPD">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{83120F50-A916-4348-B87C-9D7C3CE932F8}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="RUN_NAME">
+      <DTS:VariableValue
+        DTS:DataType="8">ORDER_F</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{29FBB540-08B4-4981-838E-90EA4A9DD4B6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="SOURCE_COLUMNS">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Control"
+      DTS:CreationName="STOCK:SEQUENCE"
+      DTS:Description="Sequence Container"
+      DTS:DTSID="{D904FC3D-9454-4085-A1DF-06AF2D4488B6}"
+      DTS:ExecutableType="STOCK:SEQUENCE"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Control">
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Control\Generate Checkpoints"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{9D259FC9-A31F-482F-8541-96B0C0E79EDF}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Generate Checkpoints"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}"
+              SQLTask:SqlStatementSource="SELECT&#xA;&#x9;&#x9;&#x9;? = a.RUN_DT&#xA;&#x9;&#x9;FROM&#xA;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;SELECT &#xA;&#x9;&#x9;&#x9;&#x9;&#x9;MAX(b.RUN_DT) RUN_DT&#xA;&#x9;&#x9;&#x9;&#x9;FROM&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;(&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SELECT RUN_DT FROM [dbo].[RUNS] WHERE RUN_NAME = ?&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;UNION&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;SELECT CONVERT([datetime],'1990-01-01 00:00:00') RUN_DT&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;)b&#xA;&#x9;&#x9;&#x9;) a" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::RUN_NAME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::CHECKPOINT"
+                SQLTask:ParameterDirection="Output"
+                SQLTask:DataType="133"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Control\Load Data"
+          DTS:CreationName="Microsoft.Pipeline"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{427B2DEC-6DEA-41C7-99FC-9742E0C51BB4}"
+          DTS:ExecutableType="Microsoft.Pipeline"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Load Data"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Control\Load Data\Add D_ID"
+                  componentClassID="Microsoft.DerivedColumn"
+                  contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+                  name="Add D_ID"
+                  usesDispositions="true">
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Add D_ID.Inputs[Derived Column Input]"
+                      description="Input to the Derived Column Transformation"
+                      name="Derived Column Input">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output]"
+                      description="Default Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      name="Derived Column Output"
+                      synchronousInputId="Package\Control\Load Data\Add D_ID.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]"
+                          name="CUSTOMER_D_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">-999</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">-999</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]"
+                          name="SALES_PERSON_UNQ_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">-999</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">-999</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]"
+                          name="PICKED_PERSON_UNQ_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">-999</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">-999</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Computation"
+                          errorRowDisposition="FailComponent"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]"
+                          name="CONTACT_PERSON_UNQ_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Expression"
+                              name="Expression">-999</property>
+                            <property
+                              containsID="true"
+                              dataType="System.String"
+                              description="Derived Column Friendly Expression"
+                              expressionType="Notify"
+                              name="FriendlyExpression">-999</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Error Output]"
+                      description="Error Output of the Derived Column Transformation"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Derived Column Error Output"
+                      synchronousInputId="Package\Control\Load Data\Add D_ID.Inputs[Derived Column Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Does Exist?"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Does Exist?"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[ORDER_F]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[ORDER_F]) [refTable]
+where [refTable].[ORDER_SRC_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ORDER_F_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ORDER_SRC_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CUSTOMER_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SALES_PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PICKED_PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CONTACT_PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ORDER_DATE" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPECTED_DELIVERY_DATE" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PONUMBER" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IS_UNDERSUPPLY_BACKORDER" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PICKING_COMPLETED" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="CREATED_DATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LAST_UPDATE_DATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Does Exist?.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Does Exist?.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Does Exist?.Inputs[Lookup Input].Columns[ORDERID]"
+                          cachedDataType="i4"
+                          cachedName="ORDERID"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ORDER_SRC_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Control\Load Data\Does Exist?.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Match Output].Columns[ORDER_F_ID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Match Output].Columns[ORDER_F_ID]"
+                          name="ORDER_F_ID"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">ORDER_F_ID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Does Exist?.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Control\Load Data\Does Exist?.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Control\Load Data\Does Exist?.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Insert"
+                  componentClassID="Microsoft.OLEDBDestination"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="Insert"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[dbo].[ORDER_F]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Insert.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[ORDERID]"
+                          cachedDataType="i4"
+                          cachedName="ORDERID"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_SRC_ID]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[CUSTOMER_D_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_D_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_D_ID]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[SALES_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="SALES_PERSON_UNQ_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[SALES_PERSON_UNQ_D_ID]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[PICKED_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="PICKED_PERSON_UNQ_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[PICKED_PERSON_UNQ_D_ID]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[CONTACT_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="CONTACT_PERSON_UNQ_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[CONTACT_PERSON_UNQ_D_ID]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[ORDERDATE]"
+                          cachedDataType="dbDate"
+                          cachedName="ORDERDATE"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[EXPECTEDDELIVERYDATE]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPECTEDDELIVERYDATE"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED_DELIVERY_DATE]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[EXPECTEDDELIVERYDATE]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CUSTOMERPURCHASEORDERNUMBER"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[PONUMBER]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERPURCHASEORDERNUMBER]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          cachedDataType="bool"
+                          cachedName="ISUNDERSUPPLYBACKORDERED"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[IS_UNDERSUPPLY_BACKORDER]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ISUNDERSUPPLYBACKORDERED]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].Columns[PICKINGCOMPLETEDWHEN]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="PICKINGCOMPLETEDWHEN"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[PICKING_COMPLETED]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKINGCOMPLETEDWHEN]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[CREATED_DATE]"
+                          dataType="dbTimeStamp"
+                          name="CREATED_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[LAST_UPDATE_DATE]"
+                          dataType="dbTimeStamp"
+                          name="LAST_UPDATE_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_F_ID]"
+                          dataType="i4"
+                          name="ORDER_F_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_SRC_ID]"
+                          dataType="i4"
+                          name="ORDER_SRC_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[CUSTOMER_D_ID]"
+                          dataType="i4"
+                          name="CUSTOMER_D_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[SALES_PERSON_UNQ_D_ID]"
+                          dataType="i4"
+                          name="SALES_PERSON_UNQ_D_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[PICKED_PERSON_UNQ_D_ID]"
+                          dataType="i4"
+                          name="PICKED_PERSON_UNQ_D_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[CONTACT_PERSON_UNQ_D_ID]"
+                          dataType="i4"
+                          name="CONTACT_PERSON_UNQ_D_ID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[ORDER_DATE]"
+                          dataType="dbDate"
+                          name="ORDER_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[EXPECTED_DELIVERY_DATE]"
+                          dataType="dbDate"
+                          name="EXPECTED_DELIVERY_DATE" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[PONUMBER]"
+                          dataType="wstr"
+                          length="20"
+                          name="PONUMBER" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[IS_UNDERSUPPLY_BACKORDER]"
+                          dataType="bool"
+                          name="IS_UNDERSUPPLY_BACKORDER" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input].ExternalColumns[PICKING_COMPLETED]"
+                          dataType="dbTimeStamp2"
+                          name="PICKING_COMPLETED"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Insert.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Insert.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Lookup Contact Person"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Contact Person"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT MAX(PERSON_UNQ_D_ID) PERSON_UNQ_D_ID, PERSON_SRC_ID FROM PERSON_D GROUP BY PERSON_SRC_ID</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT MAX(PERSON_UNQ_D_ID) PERSON_UNQ_D_ID, PERSON_SRC_ID FROM PERSON_D GROUP BY PERSON_SRC_ID) [refTable]
+where [refTable].[PERSON_SRC_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PERSON_SRC_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CONTACTPERSONID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Lookup Contact Person.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input].Columns[CONTACTPERSONID]"
+                          cachedDataType="i4"
+                          cachedName="CONTACTPERSONID"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CONTACTPERSONID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PERSON_SRC_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input].Columns[CONTACT_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="CONTACT_PERSON_UNQ_ID"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn" />
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">PERSON_UNQ_D_ID</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Lookup Customer"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Customer"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[CUSTOMER_D]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[CUSTOMER_D]) [refTable]
+where [refTable].[CUSTOMER_SRC_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="CUSTOMER_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CUSTOMER_SRC_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CUSTOMER_NAME" dataType="DT_WSTR" length="100" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BILL_TO_CUSTOMER_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CUSTOMER_CATEGORY_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="BUYING_GROUP_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRIMARY_CONTACT_PERSON_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PRIMARY_CONTACT_PERSON_CUR_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ALT_CONTACT_PERSON_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ALT_CONTACT_PERSON_CUR_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_METHOD_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_CITY_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="POSTAL_CITY_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CREDIT_LIMIT" dataType="DT_NUMERIC" length="0" precision="18" scale="2" codePage="0"/&gt;&lt;referenceColumn name="OPENED_DATE" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DISCOUNT_PERCENT" dataType="DT_NUMERIC" length="0" precision="18" scale="3" codePage="0"/&gt;&lt;referenceColumn name="IS_STMT_SENT" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IS_CREDIT_HOLD" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PAYMENT_DAYS" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PHONE_NUMBER" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="FAX_NUMBER" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_RUN" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="RUN_POSITION" dataType="DT_WSTR" length="5" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="WEBSITE_URL" dataType="DT_WSTR" length="256" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_ADDRESS_LINE_1" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_ADDRESS_LINE_2" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_POSTAL_CODE" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="DELIVERY_LOCATION" dataType="DT_IMAGE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="POSTAL_ADDRESS_LINE_1" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="POSTAL_ADDRESS_LINE_2" dataType="DT_WSTR" length="60" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="POSTAL_ADDRESS_CODE" dataType="DT_WSTR" length="10" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SysStartTime" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SysEndTime" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Lookup Customer.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input].Columns[CUSTOMERID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMERID"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CUSTOMER_SRC_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input].Columns[CUSTOMER_D_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_D_ID"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn" />
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">CUSTOMER_D_ID</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Lookup Picked Person"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Picked Person"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT MAX(PERSON_UNQ_D_ID) PERSON_UNQ_D_ID, PERSON_SRC_ID FROM PERSON_D GROUP BY PERSON_SRC_ID</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT MAX(PERSON_UNQ_D_ID) PERSON_UNQ_D_ID, PERSON_SRC_ID FROM PERSON_D GROUP BY PERSON_SRC_ID) [refTable]
+where [refTable].[PERSON_SRC_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PERSON_SRC_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKEDBYPERSONID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Lookup Picked Person.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input].Columns[PICKEDBYPERSONID]"
+                          cachedDataType="i4"
+                          cachedName="PICKEDBYPERSONID"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKEDBYPERSONID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PERSON_SRC_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input].Columns[PICKED_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="PICKED_PERSON_UNQ_ID"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn" />
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">PERSON_UNQ_D_ID</property>
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Lookup Sales Person"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Lookup Sales Person"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT MAX(PERSON_UNQ_D_ID) PERSON_UNQ_D_ID, PERSON_SRC_ID FROM PERSON_D GROUP BY PERSON_SRC_ID</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT MAX(PERSON_UNQ_D_ID) PERSON_UNQ_D_ID, PERSON_SRC_ID FROM PERSON_D GROUP BY PERSON_SRC_ID) [refTable]
+where [refTable].[PERSON_SRC_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PERSON_SRC_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[SALESPERSONPERSONID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Lookup Sales Person.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input].Columns[SALES_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="SALES_PERSON_UNQ_ID"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]"
+                          truncationRowDisposition="FailComponent"
+                          usageType="readWrite">
+                          <properties>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn" />
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">PERSON_UNQ_D_ID</property>
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input].Columns[SALESPERSONPERSONID]"
+                          cachedDataType="i4"
+                          cachedName="SALESPERSONPERSONID"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[SALESPERSONPERSONID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PERSON_SRC_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      errorRowDisposition="IgnoreFailure"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Needs Update"
+                  componentClassID="Microsoft.Lookup"
+                  contactInfo="Lookup;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;6"
+                  description="Joins additional columns to the data flow by looking up values in a table. For example, join to the 'employee id' column the employees table to get 'hire date' and 'employee name'. We recommend this transformation when the lookup table can fit into memory."
+                  name="Needs Update"
+                  usesDispositions="true"
+                  version="6">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the SQL statement that generates the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[ORDER_F]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies a SQL statement that uses parameters to generate the lookup table."
+                      expressionType="Notify"
+                      name="SqlCommandParam"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[ORDER_F]) [refTable]
+where [refTable].[ORDER_SRC_ID] = ? and [refTable].[ORDER_DATE] = ? and [refTable].[EXPECTED_DELIVERY_DATE] = ? and [refTable].[PONUMBER] = ? and [refTable].[IS_UNDERSUPPLY_BACKORDER] = ? and [refTable].[PICKING_COMPLETED] = ? and [refTable].[CUSTOMER_D_ID] = ? and [refTable].[SALES_PERSON_UNQ_D_ID] = ? and [refTable].[PICKED_PERSON_UNQ_D_ID] = ? and [refTable].[CONTACT_PERSON_UNQ_D_ID] = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the type of connection used to access the reference dataset."
+                      name="ConnectionType"
+                      typeConverter="LookupConnectionType">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the cache type of the lookup table."
+                      name="CacheType"
+                      typeConverter="CacheType">2</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
+                      name="NoMatchBehavior"
+                      typeConverter="LookupNoMatchBehavior">1</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
+                      name="NoMatchCachePercentage">0</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Maximum Memory Usage for Reference Cache on a 32 bit platform."
+                      name="MaxMemoryUsage">25</property>
+                    <property
+                      dataType="System.Int64"
+                      description="Maximum Memory Usage for Reference Cache on a 64 bit platform."
+                      name="MaxMemoryUsage64">25</property>
+                    <property
+                      dataType="System.String"
+                      description="Indicates whether to reference metadata in an XML format."
+                      name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="ORDER_F_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ORDER_SRC_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CUSTOMER_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="SALES_PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PICKED_PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="CONTACT_PERSON_UNQ_D_ID" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="ORDER_DATE" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="EXPECTED_DELIVERY_DATE" dataType="DT_DBDATE" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PONUMBER" dataType="DT_WSTR" length="20" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="IS_UNDERSUPPLY_BACKORDER" dataType="DT_BOOL" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="PICKING_COMPLETED" dataType="DT_DBTIMESTAMP2" length="0" precision="0" scale="7" codePage="0"/&gt;&lt;referenceColumn name="CREATED_DATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="LAST_UPDATE_DATE" dataType="DT_DBTIMESTAMP" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                    <property
+                      containsID="true"
+                      dataType="System.String"
+                      description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
+                      name="ParameterMap">#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]};#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]};#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[EXPECTEDDELIVERYDATE]};#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERPURCHASEORDERNUMBER]};#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ISUNDERSUPPLYBACKORDERED]};#{Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKINGCOMPLETEDWHEN]};#{Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]};#{Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]};#{Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]};#{Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]};</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Determines whether duplicate keys in the reference data should be treated as errors when full cache mode is used."
+                      name="TreatDuplicateKeysAsError">false</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Needs Update.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="Connection manager used to access lookup data."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input]"
+                      name="Lookup Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[ORDERID]"
+                          cachedDataType="i4"
+                          cachedName="ORDERID"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ORDER_SRC_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[CUSTOMER_D_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_D_ID"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CUSTOMER_D_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[SALES_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="SALES_PERSON_UNQ_ID"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">SALES_PERSON_UNQ_D_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[PICKED_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="PICKED_PERSON_UNQ_ID"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PICKED_PERSON_UNQ_D_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[CONTACT_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="CONTACT_PERSON_UNQ_ID"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">CONTACT_PERSON_UNQ_D_ID</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[PICKINGCOMPLETEDWHEN]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="PICKINGCOMPLETEDWHEN"
+                          cachedScale="7"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKINGCOMPLETEDWHEN]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PICKING_COMPLETED</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          cachedDataType="bool"
+                          cachedName="ISUNDERSUPPLYBACKORDERED"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ISUNDERSUPPLYBACKORDERED]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">IS_UNDERSUPPLY_BACKORDER</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CUSTOMERPURCHASEORDERNUMBER"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERPURCHASEORDERNUMBER]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">PONUMBER</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[EXPECTEDDELIVERYDATE]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPECTEDDELIVERYDATE"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[EXPECTEDDELIVERYDATE]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">EXPECTED_DELIVERY_DATE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input].Columns[ORDERDATE]"
+                          cachedDataType="dbDate"
+                          cachedName="ORDERDATE"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table that a column joins."
+                              name="JoinToReferenceColumn">ORDER_DATE</property>
+                            <property
+                              dataType="System.Null"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn" />
+                          </properties>
+                        </inputColumn>
+                      </inputColumns>
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Needs Update.Outputs[Lookup Match Output]"
+                      errorOrTruncationOperation="Lookup"
+                      exclusionGroup="1"
+                      name="Lookup Match Output"
+                      synchronousInputId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Needs Update.Outputs[Lookup Match Output].Columns[ORDER_F_ID2]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Copy Column"
+                          lineageId="Package\Control\Load Data\Needs Update.Outputs[Lookup Match Output].Columns[ORDER_F_ID2]"
+                          name="ORDER_F_ID2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.String"
+                              description="Specifies the column in the reference table from which a column is copied."
+                              name="CopyFromReferenceColumn">ORDER_F_ID</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Needs Update.Outputs[Lookup No Match Output]"
+                      description="The Lookup output that handles rows with no matching entries in the reference dataset. Use this output when the NoMatchBehavior property is set to &quot;Send rows with no matching entries to the no match output.&quot;"
+                      exclusionGroup="1"
+                      name="Lookup No Match Output"
+                      synchronousInputId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Needs Update.Outputs[Lookup Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="Lookup Error Output"
+                      synchronousInputId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Needs Update.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Needs Update.Outputs[Lookup Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Needs Update.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Needs Update.Outputs[Lookup Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\ROWS_INS"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="ROWS_INS">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::ROWS_INS</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\ROWS_INS.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\ROWS_INS.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Control\Load Data\ROWS_INS.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\ROWS_SKIP"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="ROWS_SKIP">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::ROWS_SKIP</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\ROWS_SKIP.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\ROWS_SKIP.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Control\Load Data\ROWS_SKIP.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\ROWS_UPD"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="ROWS_UPD">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::ROWS_UPD</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\ROWS_UPD.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\ROWS_UPD.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Control\Load Data\ROWS_UPD.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Source"
+                  componentClassID="Microsoft.OLEDBSource"
+                  contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+                  description="OLE DB Source"
+                  name="Source"
+                  usesDispositions="true"
+                  version="7">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[Sales].[Orders]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable">User::LOAD_QUERY</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT ORDERID, CUSTOMERID, SALESPERSONPERSONID, PICKEDBYPERSONID, CONTACTPERSONID, ORDERDATE, EXPECTEDDELIVERYDATE, CUSTOMERPURCHASEORDERNUMBER, ISUNDERSUPPLYBACKORDERED, PICKINGCOMPLETEDWHEN FROM Sales.Orders WHERE LASTEDITEDWHEN BETWEEN '1/3/2000 5:55:06 PM' AND '1/3/2018 11:31:33 PM'</property>
+                    <property
+                      dataType="System.String"
+                      description="The variable that contains the SQL command to be executed."
+                      name="SqlCommandVariable">User::LOAD_QUERY</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.String"
+                      description="The mappings between the parameters in the SQL command and variables."
+                      name="ParameterMapping"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Source.Connections[OleDbConnection]"
+                      connectionManagerID="{F0603FDD-4F89-468B-9C90-8028A0F43972}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).WideWorldImporters]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output]"
+                      name="OLE DB Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERID]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]"
+                          name="ORDERID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERID]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERID]"
+                          name="CUSTOMERID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[SALESPERSONPERSONID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[SALESPERSONPERSONID]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[SALESPERSONPERSONID]"
+                          name="SALESPERSONPERSONID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKEDBYPERSONID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[PICKEDBYPERSONID]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKEDBYPERSONID]"
+                          name="PICKEDBYPERSONID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CONTACTPERSONID]"
+                          dataType="i4"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[CONTACTPERSONID]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CONTACTPERSONID]"
+                          name="CONTACTPERSONID"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERDATE]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]"
+                          name="ORDERDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[EXPECTEDDELIVERYDATE]"
+                          dataType="dbDate"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[EXPECTEDDELIVERYDATE]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[EXPECTEDDELIVERYDATE]"
+                          name="EXPECTEDDELIVERYDATE"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          dataType="wstr"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERPURCHASEORDERNUMBER]"
+                          length="20"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          name="CUSTOMERPURCHASEORDERNUMBER"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          dataType="bool"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[ISUNDERSUPPLYBACKORDERED]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          name="ISUNDERSUPPLYBACKORDERED"
+                          truncationRowDisposition="FailComponent" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKINGCOMPLETEDWHEN]"
+                          dataType="dbTimeStamp2"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[PICKINGCOMPLETEDWHEN]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKINGCOMPLETEDWHEN]"
+                          name="PICKINGCOMPLETEDWHEN"
+                          scale="7"
+                          truncationRowDisposition="FailComponent" />
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERID]"
+                          dataType="i4"
+                          name="ORDERID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERID]"
+                          dataType="i4"
+                          name="CUSTOMERID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[SALESPERSONPERSONID]"
+                          dataType="i4"
+                          name="SALESPERSONPERSONID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[PICKEDBYPERSONID]"
+                          dataType="i4"
+                          name="PICKEDBYPERSONID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[CONTACTPERSONID]"
+                          dataType="i4"
+                          name="CONTACTPERSONID" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[ORDERDATE]"
+                          dataType="dbDate"
+                          name="ORDERDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[EXPECTEDDELIVERYDATE]"
+                          dataType="dbDate"
+                          name="EXPECTEDDELIVERYDATE" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMERPURCHASEORDERNUMBER]"
+                          dataType="wstr"
+                          length="20"
+                          name="CUSTOMERPURCHASEORDERNUMBER" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[ISUNDERSUPPLYBACKORDERED]"
+                          dataType="bool"
+                          name="ISUNDERSUPPLYBACKORDERED" />
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].ExternalColumns[PICKINGCOMPLETEDWHEN]"
+                          dataType="dbTimeStamp2"
+                          name="PICKINGCOMPLETEDWHEN"
+                          scale="7" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output]"
+                      isErrorOut="true"
+                      name="OLE DB Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ORDERID]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ORDERID]"
+                          name="ORDERID" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMERID]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMERID]"
+                          name="CUSTOMERID" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[SALESPERSONPERSONID]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[SALESPERSONPERSONID]"
+                          name="SALESPERSONPERSONID" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[PICKEDBYPERSONID]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[PICKEDBYPERSONID]"
+                          name="PICKEDBYPERSONID" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[CONTACTPERSONID]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[CONTACTPERSONID]"
+                          name="CONTACTPERSONID" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ORDERDATE]"
+                          dataType="dbDate"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ORDERDATE]"
+                          name="ORDERDATE" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[EXPECTEDDELIVERYDATE]"
+                          dataType="dbDate"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[EXPECTEDDELIVERYDATE]"
+                          name="EXPECTEDDELIVERYDATE" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          dataType="wstr"
+                          length="20"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          name="CUSTOMERPURCHASEORDERNUMBER" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          dataType="bool"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          name="ISUNDERSUPPLYBACKORDERED" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[PICKINGCOMPLETEDWHEN]"
+                          dataType="dbTimeStamp2"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[PICKINGCOMPLETEDWHEN]"
+                          name="PICKINGCOMPLETEDWHEN"
+                          scale="7" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\SOURCE_COLUMNS"
+                  componentClassID="Microsoft.RowCount"
+                  contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+                  description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+                  name="SOURCE_COLUMNS">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable to hold the row count."
+                      name="VariableName">User::SOURCE_COLUMNS</property>
+                  </properties>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\SOURCE_COLUMNS.Inputs[Row Count Input 1]"
+                      hasSideEffects="true"
+                      name="Row Count Input 1">
+                      <externalMetadataColumns />
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\SOURCE_COLUMNS.Outputs[Row Count Output 1]"
+                      name="Row Count Output 1"
+                      synchronousInputId="Package\Control\Load Data\SOURCE_COLUMNS.Inputs[Row Count Input 1]">
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Control\Load Data\Update"
+                  componentClassID="Microsoft.OLEDBCommand"
+                  contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+                  description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+                  name="Update"
+                  usesDispositions="true"
+                  version="2">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      expressionType="Notify"
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE ORDER_F SET CUSTOMER_D_ID = ?, SALES_PERSON_UNQ_D_ID = ?, PICKED_PERSON_UNQ_D_ID = ?, CONTACT_PERSON_UNQ_D_ID = ?, ORDER_DATE = ?, EXPECTED_DELIVERY_DATE = ?, PONUMBER = ?, IS_UNDERSUPPLY_BACKORDER = ?, PICKING_COMPLETED = ? WHERE ORDER_SRC_ID = ?</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Control\Load Data\Update.Connections[OleDbConnection]"
+                      connectionManagerID="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[(local).demoDW]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input]"
+                      errorOrTruncationOperation="Command Execution"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Command Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[CUSTOMER_D_ID]"
+                          cachedDataType="i4"
+                          cachedName="CUSTOMER_D_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CUSTOMER_D_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[SALES_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="SALES_PERSON_UNQ_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[SALES_PERSON_UNQ_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[PICKED_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="PICKED_PERSON_UNQ_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[PICKED_PERSON_UNQ_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[CONTACT_PERSON_UNQ_ID]"
+                          cachedDataType="i4"
+                          cachedName="CONTACT_PERSON_UNQ_ID"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          lineageId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output].Columns[CONTACT_PERSON_UNQ_ID]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[ORDERDATE]"
+                          cachedDataType="dbDate"
+                          cachedName="ORDERDATE"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERDATE]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[EXPECTEDDELIVERYDATE]"
+                          cachedDataType="dbDate"
+                          cachedName="EXPECTEDDELIVERYDATE"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[EXPECTEDDELIVERYDATE]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[CUSTOMERPURCHASEORDERNUMBER]"
+                          cachedDataType="wstr"
+                          cachedLength="20"
+                          cachedName="CUSTOMERPURCHASEORDERNUMBER"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[CUSTOMERPURCHASEORDERNUMBER]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[ISUNDERSUPPLYBACKORDERED]"
+                          cachedDataType="bool"
+                          cachedName="ISUNDERSUPPLYBACKORDERED"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ISUNDERSUPPLYBACKORDERED]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[PICKINGCOMPLETEDWHEN]"
+                          cachedDataType="dbTimeStamp2"
+                          cachedName="PICKINGCOMPLETEDWHEN"
+                          cachedScale="7"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[PICKINGCOMPLETEDWHEN]" />
+                        <inputColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].Columns[ORDERID]"
+                          cachedDataType="i4"
+                          cachedName="ORDERID"
+                          externalMetadataColumnId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          lineageId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output].Columns[ORDERID]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                          dataType="i4"
+                          name="Param_0">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                          dataType="i4"
+                          name="Param_1">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                          dataType="i4"
+                          name="Param_2">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                          dataType="i4"
+                          name="Param_3">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                          dataType="dbDate"
+                          name="Param_4">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                          dataType="dbDate"
+                          name="Param_5">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                          dataType="wstr"
+                          length="20"
+                          name="Param_6">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                          dataType="bool"
+                          name="Param_7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">65</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                          dataType="dbTimeStamp2"
+                          name="Param_8"
+                          scale="7">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">1073741889</property>
+                          </properties>
+                        </externalMetadataColumn>
+                        <externalMetadataColumn
+                          refId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                          dataType="i4"
+                          name="Param_9">
+                          <properties>
+                            <property
+                              dataType="System.Int32"
+                              description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                              name="DBParamInfoFlags">81</property>
+                          </properties>
+                        </externalMetadataColumn>
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Control\Load Data\Update.Outputs[OLE DB Command Output]"
+                      exclusionGroup="1"
+                      name="OLE DB Command Output"
+                      synchronousInputId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input]">
+                      <externalMetadataColumns />
+                    </output>
+                    <output
+                      refId="Package\Control\Load Data\Update.Outputs[OLE DB Command Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Command Error Output"
+                      synchronousInputId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Control\Load Data\Update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Update.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Control\Load Data\Update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Control\Load Data\Update.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Control\Load Data.Paths[Derived Column Output]"
+                  endId="Package\Control\Load Data\Lookup Customer.Inputs[Lookup Input]"
+                  name="Derived Column Output"
+                  startId="Package\Control\Load Data\Add D_ID.Outputs[Derived Column Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup Match Output]"
+                  endId="Package\Control\Load Data\Needs Update.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Control\Load Data\Does Exist?.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup Match Output1]"
+                  endId="Package\Control\Load Data\ROWS_SKIP.Inputs[Row Count Input 1]"
+                  name="Lookup Match Output"
+                  startId="Package\Control\Load Data\Needs Update.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup Match Output2]"
+                  endId="Package\Control\Load Data\Lookup Sales Person.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Control\Load Data\Lookup Customer.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup Match Output3]"
+                  endId="Package\Control\Load Data\Lookup Picked Person.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Control\Load Data\Lookup Sales Person.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup Match Output4]"
+                  endId="Package\Control\Load Data\Lookup Contact Person.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Control\Load Data\Lookup Picked Person.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup Match Output5]"
+                  endId="Package\Control\Load Data\Does Exist?.Inputs[Lookup Input]"
+                  name="Lookup Match Output"
+                  startId="Package\Control\Load Data\Lookup Contact Person.Outputs[Lookup Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup No Match Output]"
+                  endId="Package\Control\Load Data\ROWS_UPD.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Control\Load Data\Needs Update.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Lookup No Match Output1]"
+                  endId="Package\Control\Load Data\ROWS_INS.Inputs[Row Count Input 1]"
+                  name="Lookup No Match Output"
+                  startId="Package\Control\Load Data\Does Exist?.Outputs[Lookup No Match Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[OLE DB Source Output]"
+                  endId="Package\Control\Load Data\SOURCE_COLUMNS.Inputs[Row Count Input 1]"
+                  name="OLE DB Source Output"
+                  startId="Package\Control\Load Data\Source.Outputs[OLE DB Source Output]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Row Count Output 1]"
+                  endId="Package\Control\Load Data\Insert.Inputs[OLE DB Destination Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Control\Load Data\ROWS_INS.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Row Count Output 11]"
+                  endId="Package\Control\Load Data\Update.Inputs[OLE DB Command Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Control\Load Data\ROWS_UPD.Outputs[Row Count Output 1]" />
+                <path
+                  refId="Package\Control\Load Data.Paths[Row Count Output 12]"
+                  endId="Package\Control\Load Data\Add D_ID.Inputs[Derived Column Input]"
+                  name="Row Count Output 1"
+                  startId="Package\Control\Load Data\SOURCE_COLUMNS.Outputs[Row Count Output 1]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Control\Update RUNS Table"
+          DTS:CreationName="Microsoft.ExecuteSQLTask"
+          DTS:Description="Execute SQL Task"
+          DTS:DTSID="{8E965AC0-F583-4657-9DA5-DCA6EE9F8020}"
+          DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Update RUNS Table"
+          DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <SQLTask:SqlTaskData
+              SQLTask:Connection="{3F55D4E3-2DAD-4BF6-8DEB-3F51E405319D}"
+              SQLTask:SqlStatementSource="INSERT INTO RUNS (RUN_NAME, RUN_DT, SOURCE_COLUMNS, ROWS_INS, ROWS_DEL, ROWS_UPD, ROWS_SKIP) VALUES(?,?,?,?,?,?,?)" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="0"
+                SQLTask:DtsVariableName="User::RUN_NAME"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="130"
+                SQLTask:ParameterSize="50" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="2"
+                SQLTask:DtsVariableName="User::SOURCE_COLUMNS"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="3"
+                SQLTask:DtsVariableName="User::ROWS_INS"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="4"
+                SQLTask:DtsVariableName="User::ROWS_DEL"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="5"
+                SQLTask:DtsVariableName="User::ROWS_UPD"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="6"
+                SQLTask:DtsVariableName="User::ROWS_SKIP"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="3"
+                SQLTask:ParameterSize="-1" />
+              <SQLTask:ParameterBinding
+                SQLTask:ParameterName="1"
+                SQLTask:DtsVariableName="User::NEWCHECKPOINT"
+                SQLTask:ParameterDirection="Input"
+                SQLTask:DataType="7"
+                SQLTask:ParameterSize="-1" />
+            </SQLTask:SqlTaskData>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Control.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{F81D1EC2-99A6-4AF2-AC0D-7313CA792DE8}"
+          DTS:From="Package\Control\Generate Checkpoints"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Control\Load Data" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Control.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{C1377C5A-A555-420C-9B1B-53E34509159B}"
+          DTS:From="Package\Control\Load Data"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Control\Update RUNS Table" />
+      </DTS:PrecedenceConstraints>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Control\Generate Checkpoints"
+          TopLeft="5.50000000000001,5.5" />
+        <NodeLayout
+          Size="127,42"
+          Id="Package\Control\Load Data"
+          TopLeft="33,107.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Control\Update RUNS Table"
+          TopLeft="10.5,209.5" />
+        <EdgeLayout
+          Id="Package\Control.PrecedenceConstraints[Constraint]"
+          TopLeft="96.5,47.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control.PrecedenceConstraints[Constraint 1]"
+          TopLeft="96.5,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="193,307"
+          Size="193,350"
+          Id="Package\Control"
+          TopLeft="5.50000000000004,5.5" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Control\Load Data">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="111,42"
+          Id="Package\Control\Load Data\Source"
+          TopLeft="33,9.5" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Control\Load Data\ROWS_UPD"
+          TopLeft="285,425.5" />
+        <NodeLayout
+          Size="182,42"
+          Id="Package\Control\Load Data\Lookup Picked Person"
+          TopLeft="844,193" />
+        <NodeLayout
+          Size="137,42"
+          Id="Package\Control\Load Data\ROWS_SKIP"
+          TopLeft="574,409.5" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Control\Load Data\Does Exist?"
+          TopLeft="204,217.5" />
+        <NodeLayout
+          Size="132,42"
+          Id="Package\Control\Load Data\ROWS_INS"
+          TopLeft="5.5,319.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Control\Load Data\Lookup Sales Person"
+          TopLeft="817,67" />
+        <NodeLayout
+          Size="187,42"
+          Id="Package\Control\Load Data\Lookup Contact Person"
+          TopLeft="521,196" />
+        <NodeLayout
+          Size="107,42"
+          Id="Package\Control\Load Data\Insert"
+          TopLeft="18.0000000000001,421.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Control\Load Data\Update"
+          TopLeft="465,531.5" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Control\Load Data\SOURCE_COLUMNS"
+          TopLeft="24.5,80.5" />
+        <NodeLayout
+          Size="145,42"
+          Id="Package\Control\Load Data\Needs Update"
+          TopLeft="387,310.5" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\Control\Load Data\Add D_ID"
+          TopLeft="277,56" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Control\Load Data\Lookup Customer"
+          TopLeft="521,76" />
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Row Count Output 12]"
+          TopLeft="196.5,101.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="80.5,-24.5"
+              Start="0,0"
+              End="73,-24.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="36.25,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="36.25,0"
+                    Point2="40.25,0"
+                    Point3="40.25,-4" />
+                  <mssgle:LineSegment
+                    End="40.25,-20.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="40.25,-20.5"
+                    Point2="40.25,-24.5"
+                    Point3="44.25,-24.5" />
+                  <mssgle:LineSegment
+                    End="73,-24.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Row Count Output 11]"
+          TopLeft="352.5,467.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="169,64"
+              Start="0,0"
+              End="169,56.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,28"
+                    Point2="0,32"
+                    Point3="4,32" />
+                  <mssgle:LineSegment
+                    End="165,32" />
+                  <mssgle:CubicBezierSegment
+                    Point1="165,32"
+                    Point2="169,32"
+                    Point3="169,36" />
+                  <mssgle:LineSegment
+                    End="169,56.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Row Count Output 1]"
+          TopLeft="71.5,361.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[OLE DB Source Output]"
+          TopLeft="88.5,51.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="22,29"
+              Start="0,0"
+              End="22,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,10.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,10.5"
+                    Point2="0,14.5"
+                    Point3="4,14.5" />
+                  <mssgle:LineSegment
+                    End="18,14.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="18,14.5"
+                    Point2="22,14.5"
+                    Point3="22,18.5" />
+                  <mssgle:LineSegment
+                    End="22,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup No Match Output1]"
+          TopLeft="249.666666666667,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-178.166666666667,60"
+              Start="0,0"
+              End="-178.166666666667,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.4279346210995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.4279346210995"
+                    Point2="0,24.4279346210995"
+                    Point3="-4,24.4279346210995" />
+                  <mssgle:LineSegment
+                    End="-174.166666666667,24.4279346210995" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-174.166666666667,24.4279346210995"
+                    Point2="-178.166666666667,24.4279346210995"
+                    Point3="-178.166666666667,28.4279346210995" />
+                  <mssgle:LineSegment
+                    End="-178.166666666667,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-144.889720052084,29.4279346210995,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup No Match Output]"
+          TopLeft="436.666666666667,352.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-84.1666666666667,73"
+              Start="0,0"
+              End="-84.1666666666667,65.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.6780354706685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.6780354706685"
+                    Point2="0,29.6780354706685"
+                    Point3="-4,29.6780354706685" />
+                  <mssgle:LineSegment
+                    End="-80.1666666666667,29.6780354706685" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-80.1666666666667,29.6780354706685"
+                    Point2="-84.1666666666667,29.6780354706685"
+                    Point3="-84.1666666666667,33.6780354706685" />
+                  <mssgle:LineSegment
+                    End="-84.1666666666667,65.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-97.8897200520833,34.6780354706685,111.6127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup Match Output5]"
+          TopLeft="521,217">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-184,21.5"
+              Start="0,0"
+              End="-176.5,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-88,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-88,0"
+                    Point2="-92,0"
+                    Point3="-92,4" />
+                  <mssgle:LineSegment
+                    End="-92,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-92,17.5"
+                    Point2="-92,21.5"
+                    Point3="-96,21.5" />
+                  <mssgle:LineSegment
+                    End="-176.5,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-140.19138671875,-17.609375,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup Match Output4]"
+          TopLeft="844,215.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-136,0"
+              Start="0,0"
+              End="-128.5,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="-128.5,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-112.44138671875,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup Match Output3]"
+          TopLeft="905,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="30,84"
+              Start="0,0"
+              End="30,76.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,38"
+                    Point2="0,42"
+                    Point3="4,42" />
+                  <mssgle:LineSegment
+                    End="26,42" />
+                  <mssgle:CubicBezierSegment
+                    Point1="26,42"
+                    Point2="30,42"
+                    Point3="30,46" />
+                  <mssgle:LineSegment
+                    End="30,76.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-33.19138671875,47,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup Match Output2]"
+          TopLeft="682,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="135,-9"
+              Start="0,0"
+              End="127.5,-9">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="63.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="63.5,0"
+                    Point2="67.5,0"
+                    Point3="67.5,-4" />
+                  <mssgle:LineSegment
+                    End="67.5,-5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="67.5,-5"
+                    Point2="67.5,-9"
+                    Point3="71.5,-9" />
+                  <mssgle:LineSegment
+                    End="127.5,-9" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="19.30861328125,1,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup Match Output1]"
+          TopLeft="482.333333333333,352.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="160.166666666667,57"
+              Start="0,0"
+              End="160.166666666667,49.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.1732605729877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.1732605729877"
+                    Point2="0,23.1732605729877"
+                    Point3="4,23.1732605729877" />
+                  <mssgle:LineSegment
+                    End="156.166666666667,23.1732605729877" />
+                  <mssgle:CubicBezierSegment
+                    Point1="156.166666666667,23.1732605729877"
+                    Point2="160.166666666667,23.1732605729877"
+                    Point3="160.166666666667,27.1732605729877" />
+                  <mssgle:LineSegment
+                    End="160.166666666667,49.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="31.8919466145833,28.1732605729877,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Lookup Match Output]"
+          TopLeft="291.333333333333,259.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="168.166666666667,51"
+              Start="0,0"
+              End="168.166666666667,43.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7637444279346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7637444279346"
+                    Point2="0,20.7637444279346"
+                    Point3="4,20.7637444279346" />
+                  <mssgle:LineSegment
+                    End="164.166666666667,20.7637444279346" />
+                  <mssgle:CubicBezierSegment
+                    Point1="164.166666666667,20.7637444279346"
+                    Point2="168.166666666667,20.7637444279346"
+                    Point3="168.166666666667,24.7637444279346" />
+                  <mssgle:LineSegment
+                    End="168.166666666667,43.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="35.8919466145833,25.7637444279346,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Control\Load Data.Paths[Derived Column Output]"
+          TopLeft="402,77">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="119,20"
+              Start="0,0"
+              End="111.5,20">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="55.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="55.5,0"
+                    Point2="59.5,0"
+                    Point3="59.5,4" />
+                  <mssgle:LineSegment
+                    End="59.5,16" />
+                  <mssgle:CubicBezierSegment
+                    Point1="59.5,16"
+                    Point2="59.5,20"
+                    Point3="63.5,20" />
+                  <mssgle:LineSegment
+                    End="111.5,20" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Lookup Picked Person">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Does Exist?">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string">[dbo].[ORDER_F]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Lookup Sales Person">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Lookup Contact Person">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string"></Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Insert">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Needs Update">
+    <Properties>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q2:string">[dbo].[ORDER_F]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q3:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q4:string">false</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Control\Load Data\Lookup Customer">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[CUSTOMER_D]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

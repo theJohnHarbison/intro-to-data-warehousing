@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2006
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C4BB0F9B-EDBE-47C8-BEDA-8D2A673B879F}"
+	ProjectSection(SolutionItems) = preProject
+		00_Truncate_DW.sql = 00_Truncate_DW.sql
+		01_Create_Database.sql = 01_Create_Database.sql
+		02_Create_Tables.sql = 02_Create_Tables.sql
+		03_Create_Loaders.sql = 03_Create_Loaders.sql
+	EndProjectSection
+EndProject
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "Integration Services Project1", "Integration Services Project1\Integration Services Project1.dtproj", "{29929783-35B3-497C-A8C2-79F0F7AB81F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{29929783-35B3-497C-A8C2-79F0F7AB81F0}.Development|Default.ActiveCfg = Development
+		{29929783-35B3-497C-A8C2-79F0F7AB81F0}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2C8DF69-6CD9-4ED2-AADA-157FFF88B10E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+﻿USE [master]
+GO
+
+CREATE DATABASE [demoDW]
+GO
